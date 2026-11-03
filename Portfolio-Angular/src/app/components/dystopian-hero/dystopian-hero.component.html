@@ -1,0 +1,31 @@
+<section class="hero-scene" #scene aria-label="Paisaje distópico animado con ciclo rápido de día y noche">
+  <div class="landscape day-layer" aria-hidden="true"></div>
+  <div class="landscape night-layer" aria-hidden="true"></div>
+
+  <div class="flock" aria-hidden="true">
+    @for (bird of birds; track bird) {
+      <div class="bird" [style.top.%]="14 + (bird * 5.3)" [style.left.px]="0">
+        <svg viewBox="0 0 70 28" xmlns="http://www.w3.org/2000/svg" focusable="false">
+          <path class="wing" d="M35 16 Q17 -1 2 8 Q20 10 35 18" />
+          <path class="wing" d="M35 16 Q53 -1 68 8 Q50 10 35 18" />
+        </svg>
+      </div>
+    }
+  </div>
+
+  <div class="hero-shade" aria-hidden="true"></div>
+  <div class="hero-copy">
+    <span class="eyebrow">PRISM / INGENIERÍA DE SOFTWARE</span>
+    <h1>Construyo tecnología para un mundo en <em>constante transformación.</em></h1>
+    <p>
+      Arquitectura de software, desarrollo Full Stack y experiencias digitales.
+      Descubre soluciones con Java, Spring Boot, Angular y tecnologías cloud.
+    </p>
+    <div class="hero-actions">
+      <a href="/proyectos" class="btn-primary">Explorar proyectos <span aria-hidden="true">↗</span></a>
+      <a href="https://www.linkedin.com/in/jaimeandrestellezg/" class="btn-outline" target="_blank" rel="noopener noreferrer">Hablemos <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+
+  <div class="scene-caption">DÍA Y NOCHE / ANIMACIÓN CONTINUA</div>
+</section>

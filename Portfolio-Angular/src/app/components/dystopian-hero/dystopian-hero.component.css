@@ -1,0 +1,50 @@
+:host { display: block; }
+*, *::before, *::after { box-sizing: border-box; }
+.hero-scene {
+  position: relative; isolation: isolate; overflow: hidden;
+  min-height: clamp(560px, 78vh, 850px); display: flex; align-items: center;
+  color: #fff6ed; background: #432e32;
+  border-radius: 20px; font-family: Manrope, Arial, sans-serif;
+}
+.landscape { position: absolute; inset: -2%; background-image: url('/images/ruinas-distopicas.webp'); background-size: cover; background-position: center 44%; will-change: opacity; }
+.day-layer { filter: saturate(1.08) brightness(1.08); }
+.night-layer { opacity: 0; filter: brightness(.19) saturate(.50) hue-rotate(178deg) contrast(1.35); }
+.sun-glow { position:absolute; z-index:1; inset:0; opacity:.72; pointer-events:none; background:#241D19; mix-blend-mode:screen; }
+.dusk-layer { position: absolute; inset: 0; opacity: 0; background:#241D19; pointer-events: none; }
+.stars { position: absolute; inset: 0; opacity: 0; pointer-events: none;
+  background-image:none;
+  background-size: 280px 210px; }
+.moon-glow { position: absolute; right: 9%; top: 6%; width: 190px; height: 190px; border-radius: 50%; opacity: 0; background:#241D19; filter:none; }
+.city-lights { position: absolute; bottom: 25%; right: 9%; width: 50%; height: 17%; opacity: 0; background:#241D19; filter:none; }
+.mist { position: absolute; bottom: -8%; width: 120%; left: -10%; height: 40%; pointer-events: none; background:#241D19; filter:none; opacity: .45; }
+.mist-back { bottom: 6%; opacity: .26; }
+.flock { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.bird { position: absolute; width: 58px; height: 29px; filter: drop-shadow(0 1px 1px rgba(0,0,0,.3)); will-change: transform; }
+.bird svg { width: 100%; height: 100%; }
+.bird .wing { fill: rgba(36,24,27,.94); stroke: rgba(20,12,14,.4); stroke-width: 1; }
+.hero-shade { position: absolute; inset: 0; background:#241D19; }
+.hero-copy { position: relative; z-index: 2; padding: clamp(40px,7vw,92px); width: min(100%,850px); text-shadow: 0 2px 22px rgba(12,8,12,.25); }
+.eyebrow { color: #ffbb86; letter-spacing: .23em; text-transform: uppercase; font-size: 11px; font-weight: 800; }
+h1 { max-width: 850px; font-size: clamp(36px,4.9vw,74px); line-height: 1.13; font-weight: 800; letter-spacing: -.035em; margin: 20px 0 22px; }
+h1 em { color: #ffaf78; font-style: normal; }
+p { font-size: clamp(15px,1.6vw,19px); line-height: 1.72; max-width: 610px; color: #fff0e7; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 30px; }
+.hero-actions a { text-decoration: none; font-size: 14px; font-weight: 750; border-radius: 12px; padding: 14px 20px; transition: transform .25s ease, background .25s ease; }
+.hero-actions a:hover { transform: translateY(-3px); }
+.btn-primary { background:#241D19; color: white; box-shadow:none; }
+.btn-outline { background: rgba(255,247,237,.09); border: 1px solid rgba(255,243,226,.65); color: #fff9ef; filter:none; }
+.scene-caption { position: absolute; right: 28px; bottom: 27px; letter-spacing: .17em; font-size: 10px; font-weight: 750; color: #ffe2cc; }
+.hero-actions a:focus-visible { outline: 3px solid #ffb87b; outline-offset: 4px; }
+@media(max-width:700px) { .hero-scene { min-height: 620px; border-radius: 14px; align-items: flex-end; } .landscape { background-position: 60% center; } .hero-shade { background:#241D19; } .hero-copy { padding: 95px 25px 74px; } .bird { width: 35px; } .scene-caption { left: 25px; right: auto; bottom: 20px; } }
+
+/* Uniform surfaces: no gradient, blur, glow or drop shadow. */
+.hero-scene{background:#3B2723}
+.day-layer{filter:none}
+.night-layer{filter:none;background-image:none!important;background-color:#14202A}
+.sun-glow,.dusk-layer,.moon-glow,.city-lights,.mist{display:none}
+.bird,.hero-copy,.hero-actions a{filter:none;text-shadow:none;box-shadow:none;backdrop-filter:none}
+.hero-shade{background:rgba(29,22,19,.66)}
+.hero-actions .btn-primary{background:#B95431;color:#fff}
+.hero-actions .btn-outline{background:#342821;color:#fff;border-color:#F1D7C2}
+.hero-copy{color:#fff}
+@media(max-width:700px){.hero-shade{background:rgba(29,22,19,.72)}}
