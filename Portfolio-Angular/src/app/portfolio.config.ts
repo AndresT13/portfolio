@@ -20,8 +20,10 @@ export interface Technology {
   /** Nombre en español, solo si difiere del inglés. */
   nameEs?: string;
   category: TechCategory;
-  /** Opcional: los conceptos sin logo se muestran como chip de texto. */
+  /** Opcional: los conceptos sin logo muestran `abbr` dentro del ícono. */
   logoUrl?: string;
+  /** Sigla mostrada en el ícono cuando no hay logo. */
+  abbr?: string;
   active: boolean;
 }
 
@@ -134,22 +136,22 @@ export const PORTFOLIO_CONFIG: PortfolioConfig = {
     { name: 'Spring Data JPA', category: 'backend', logoUrl: 'assets/tech/spring-boot.svg', active: true },
     { name: 'Spring Batch', category: 'backend', logoUrl: 'assets/tech/spring-boot.svg', active: true },
     { name: 'Hibernate', category: 'backend', logoUrl: 'assets/tech/hibernate.svg', active: true },
-    { name: 'JPA', category: 'backend', active: true },
+    { name: 'JPA', category: 'backend', abbr: 'JPA', active: true },
     { name: 'Maven', category: 'backend', logoUrl: 'assets/tech/maven.svg', active: true },
     { name: 'Gradle', category: 'backend', logoUrl: 'assets/tech/gradle.svg', active: true },
     // architecture
-    { name: 'Microservices', nameEs: 'Microservicios', category: 'architecture', active: true },
-    { name: 'Hexagonal architecture', nameEs: 'Arquitectura hexagonal', category: 'architecture', active: true },
-    { name: 'DDD', category: 'architecture', active: true },
-    { name: 'SOLID', category: 'architecture', active: true },
-    { name: 'REST APIs', category: 'architecture', active: true },
+    { name: 'Microservices', nameEs: 'Microservicios', category: 'architecture', abbr: 'MS', active: true },
+    { name: 'Hexagonal architecture', nameEs: 'Arquitectura hexagonal', category: 'architecture', abbr: 'HEX', active: true },
+    { name: 'DDD', category: 'architecture', abbr: 'DDD', active: true },
+    { name: 'SOLID', category: 'architecture', abbr: 'SOLID', active: true },
+    { name: 'REST APIs', category: 'architecture', abbr: 'REST', active: true },
     { name: 'OpenAPI', category: 'architecture', logoUrl: 'assets/tech/openapi.svg', active: true },
-    { name: 'Apache Camel', category: 'architecture', active: true },
+    { name: 'Apache Camel', category: 'architecture', abbr: 'CML', active: true },
     { name: 'Apache Kafka', category: 'architecture', logoUrl: 'assets/tech/kafka.svg', active: true },
     { name: 'RabbitMQ', category: 'architecture', logoUrl: 'assets/tech/rabbitmq.svg', active: true },
     { name: 'GraphQL', category: 'architecture', logoUrl: 'assets/tech/graphql.svg', active: true },
-    { name: 'Eureka', category: 'architecture', active: true },
-    { name: 'Circuit Breaker', category: 'architecture', active: true },
+    { name: 'Eureka', category: 'architecture', abbr: 'EU', active: true },
+    { name: 'Circuit Breaker', category: 'architecture', abbr: 'CB', active: true },
     { name: 'Kong API Gateway', category: 'architecture', logoUrl: 'assets/tech/kong.svg', active: true },
     { name: 'Kong Manager', category: 'architecture', logoUrl: 'assets/tech/kong.svg', active: true },
     { name: 'Kong Mesh', category: 'architecture', logoUrl: 'assets/tech/kong.svg', active: true },
@@ -163,7 +165,7 @@ export const PORTFOLIO_CONFIG: PortfolioConfig = {
     { name: 'SCSS', category: 'frontend', logoUrl: 'assets/tech/sass.svg', active: true },
     { name: 'Bootstrap', category: 'frontend', logoUrl: 'assets/tech/bootstrap.svg', active: true },
     { name: 'Ionic', category: 'frontend', logoUrl: 'assets/tech/ionic.svg', active: true },
-    { name: 'Compodoc', category: 'frontend', active: true },
+    { name: 'Compodoc', category: 'frontend', abbr: 'CD', active: true },
     // databases
     { name: 'Oracle PL/SQL', category: 'databases', logoUrl: 'assets/tech/oracle.svg', active: true },
     { name: 'PostgreSQL', category: 'databases', logoUrl: 'assets/tech/postgresql.svg', active: true },
@@ -171,7 +173,7 @@ export const PORTFOLIO_CONFIG: PortfolioConfig = {
     { name: 'MongoDB', category: 'databases', logoUrl: 'assets/tech/mongodb.svg', active: true },
     // cloud
     { name: 'Microsoft Azure', category: 'cloud', logoUrl: 'assets/tech/azure.svg', active: true },
-    { name: 'AWS EC2/S3/Lambda/CloudWatch/EBS', category: 'cloud', logoUrl: 'assets/tech/aws.svg', active: true },
+    { name: 'AWS EC2/\u200bS3/\u200bLambda/\u200bCloudWatch/\u200bEBS', category: 'cloud', logoUrl: 'assets/tech/aws.svg', active: true },
     { name: 'Docker', category: 'cloud', logoUrl: 'assets/tech/docker.svg', active: true },
     { name: 'Jenkins CI/CD', category: 'cloud', logoUrl: 'assets/tech/jenkins.svg', active: true },
     { name: 'Azure DevOps', category: 'cloud', logoUrl: 'assets/tech/azure-devops.svg', active: true },
@@ -180,17 +182,17 @@ export const PORTFOLIO_CONFIG: PortfolioConfig = {
     { name: 'Git', category: 'cloud', logoUrl: 'assets/tech/git.svg', active: true },
     // quality
     { name: 'JUnit', category: 'quality', logoUrl: 'assets/tech/junit.svg', active: true },
-    { name: 'Mockito', category: 'quality', active: true },
+    { name: 'Mockito', category: 'quality', abbr: 'MO', active: true },
     { name: 'Karma', category: 'quality', logoUrl: 'assets/tech/karma.svg', active: true },
     { name: 'Jasmine', category: 'quality', logoUrl: 'assets/tech/jasmine.svg', active: true },
-    { name: 'JaCoCo', category: 'quality', active: true },
+    { name: 'JaCoCo', category: 'quality', abbr: 'JCC', active: true },
     { name: 'SonarQube', category: 'quality', logoUrl: 'assets/tech/sonarqube.svg', active: true },
     { name: 'Checkmarx', category: 'quality', logoUrl: 'assets/tech/checkmarx.svg', active: true },
     { name: 'AppScan', category: 'quality', logoUrl: 'assets/tech/hcl.svg', active: true },
-    { name: 'Black Duck', category: 'quality', active: true },
+    { name: 'Black Duck', category: 'quality', abbr: 'BD', active: true },
     { name: 'OWASP Dependency-Check', category: 'quality', logoUrl: 'assets/tech/owasp.svg', active: true },
     // ai
-    { name: 'ChatGPT', category: 'ai', active: true },
+    { name: 'ChatGPT', category: 'ai', abbr: 'GPT', active: true },
     { name: 'Gemini', category: 'ai', logoUrl: 'assets/tech/gemini.svg', active: true },
     { name: 'Claude', category: 'ai', logoUrl: 'assets/tech/claude.svg', active: true },
     { name: 'Google Toolkit AI', category: 'ai', logoUrl: 'assets/tech/google.svg', active: true },
