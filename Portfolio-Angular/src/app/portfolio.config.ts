@@ -13,11 +13,19 @@ export interface CredlyBadge {
   issuedDate: string;
 }
 
+export type TechCategory = 'backend' | 'architecture' | 'frontend' | 'databases' | 'cloud' | 'quality' | 'ai';
+
 export interface Technology {
   name: string;
-  logoUrl: string;
+  /** Nombre en español, solo si difiere del inglés. */
+  nameEs?: string;
+  category: TechCategory;
+  /** Opcional: los conceptos sin logo se muestran como chip de texto. */
+  logoUrl?: string;
   active: boolean;
 }
+
+export const TECH_CATEGORIES: TechCategory[] = ['backend', 'architecture', 'frontend', 'databases', 'cloud', 'quality', 'ai'];
 
 export interface PortfolioConfig {
   faviconPath: string;
@@ -114,19 +122,78 @@ export const PORTFOLIO_CONFIG: PortfolioConfig = {
       verificationUrl: 'https://www.credly.com/badges/5d2533fd-a46a-4e33-a665-1175d2c23ce2/public_url',
       issuedDate: '2023-02',
     },
-    {
-      id: '6a9a0018-d636-47b8-9e8d-c5a48b29302c',
-      title: "Design Thinking Professional Certificate - DTPC®",
-      issuer: 'CertiProf',
-      imageUrl: 'https://images.credly.com/images/e173fd04-4f89-4310-8a42-e16c04b843ed/image.png',
-      verificationUrl: 'https://www.credly.com/badges/6a9a0018-d636-47b8-9e8d-c5a48b29302c/public_url',
-      issuedDate: '2022-03',
-    },
   ],
   technologies: [
-    { name: 'Java', logoUrl: 'assets/tech/java.svg', active: true },
-    { name: 'Spring Boot', logoUrl: 'assets/tech/spring-boot.svg', active: true },
-    { name: 'Angular', logoUrl: 'assets/tech/angular.svg', active: true },
+    // backend
+    { name: 'Java 8/11/17/21', category: 'backend', logoUrl: 'assets/tech/java.svg', active: true },
+    { name: 'Spring Boot', category: 'backend', logoUrl: 'assets/tech/spring-boot.svg', active: true },
+    { name: 'Spring MVC', category: 'backend', logoUrl: 'assets/tech/spring-boot.svg', active: true },
+    { name: 'Spring WebFlux', category: 'backend', logoUrl: 'assets/tech/spring-boot.svg', active: true },
+    { name: 'Reactive programming', nameEs: 'Programación reactiva', category: 'backend', logoUrl: 'assets/tech/reactivex.svg', active: true },
+    { name: 'Spring Security', category: 'backend', logoUrl: 'assets/tech/spring-security.svg', active: true },
+    { name: 'Spring Data JPA', category: 'backend', logoUrl: 'assets/tech/spring-boot.svg', active: true },
+    { name: 'Spring Batch', category: 'backend', logoUrl: 'assets/tech/spring-boot.svg', active: true },
+    { name: 'Hibernate', category: 'backend', logoUrl: 'assets/tech/hibernate.svg', active: true },
+    { name: 'JPA', category: 'backend', active: true },
+    { name: 'Maven', category: 'backend', logoUrl: 'assets/tech/maven.svg', active: true },
+    { name: 'Gradle', category: 'backend', logoUrl: 'assets/tech/gradle.svg', active: true },
+    // architecture
+    { name: 'Microservices', nameEs: 'Microservicios', category: 'architecture', active: true },
+    { name: 'Hexagonal architecture', nameEs: 'Arquitectura hexagonal', category: 'architecture', active: true },
+    { name: 'DDD', category: 'architecture', active: true },
+    { name: 'SOLID', category: 'architecture', active: true },
+    { name: 'REST APIs', category: 'architecture', active: true },
+    { name: 'OpenAPI', category: 'architecture', logoUrl: 'assets/tech/openapi.svg', active: true },
+    { name: 'Apache Camel', category: 'architecture', active: true },
+    { name: 'Apache Kafka', category: 'architecture', logoUrl: 'assets/tech/kafka.svg', active: true },
+    { name: 'RabbitMQ', category: 'architecture', logoUrl: 'assets/tech/rabbitmq.svg', active: true },
+    { name: 'GraphQL', category: 'architecture', logoUrl: 'assets/tech/graphql.svg', active: true },
+    { name: 'Eureka', category: 'architecture', active: true },
+    { name: 'Circuit Breaker', category: 'architecture', active: true },
+    { name: 'Kong API Gateway', category: 'architecture', logoUrl: 'assets/tech/kong.svg', active: true },
+    { name: 'Kong Manager', category: 'architecture', logoUrl: 'assets/tech/kong.svg', active: true },
+    { name: 'Kong Mesh', category: 'architecture', logoUrl: 'assets/tech/kong.svg', active: true },
+    { name: 'OAuth2', category: 'architecture', logoUrl: 'assets/tech/oauth.svg', active: true },
+    { name: 'JWT', category: 'architecture', logoUrl: 'assets/tech/jwt.svg', active: true },
+    // frontend
+    { name: 'Angular 11+', category: 'frontend', logoUrl: 'assets/tech/angular.svg', active: true },
+    { name: 'Angular Material', category: 'frontend', logoUrl: 'assets/tech/angular-material.svg', active: true },
+    { name: 'TypeScript', category: 'frontend', logoUrl: 'assets/tech/typescript.svg', active: true },
+    { name: 'JavaScript', category: 'frontend', logoUrl: 'assets/tech/javascript.svg', active: true },
+    { name: 'SCSS', category: 'frontend', logoUrl: 'assets/tech/sass.svg', active: true },
+    { name: 'Bootstrap', category: 'frontend', logoUrl: 'assets/tech/bootstrap.svg', active: true },
+    { name: 'Ionic', category: 'frontend', logoUrl: 'assets/tech/ionic.svg', active: true },
+    { name: 'Compodoc', category: 'frontend', active: true },
+    // databases
+    { name: 'Oracle PL/SQL', category: 'databases', logoUrl: 'assets/tech/oracle.svg', active: true },
+    { name: 'PostgreSQL', category: 'databases', logoUrl: 'assets/tech/postgresql.svg', active: true },
+    { name: 'SQL Server', category: 'databases', logoUrl: 'assets/tech/sqlserver.svg', active: true },
+    { name: 'MongoDB', category: 'databases', logoUrl: 'assets/tech/mongodb.svg', active: true },
+    // cloud
+    { name: 'Microsoft Azure', category: 'cloud', logoUrl: 'assets/tech/azure.svg', active: true },
+    { name: 'AWS EC2/S3/Lambda/CloudWatch/EBS', category: 'cloud', logoUrl: 'assets/tech/aws.svg', active: true },
+    { name: 'Docker', category: 'cloud', logoUrl: 'assets/tech/docker.svg', active: true },
+    { name: 'Jenkins CI/CD', category: 'cloud', logoUrl: 'assets/tech/jenkins.svg', active: true },
+    { name: 'Azure DevOps', category: 'cloud', logoUrl: 'assets/tech/azure-devops.svg', active: true },
+    { name: 'OpenShift', category: 'cloud', logoUrl: 'assets/tech/openshift.svg', active: true },
+    { name: 'JFrog Artifactory', category: 'cloud', logoUrl: 'assets/tech/jfrog.svg', active: true },
+    { name: 'Git', category: 'cloud', logoUrl: 'assets/tech/git.svg', active: true },
+    // quality
+    { name: 'JUnit', category: 'quality', logoUrl: 'assets/tech/junit.svg', active: true },
+    { name: 'Mockito', category: 'quality', active: true },
+    { name: 'Karma', category: 'quality', logoUrl: 'assets/tech/karma.svg', active: true },
+    { name: 'Jasmine', category: 'quality', logoUrl: 'assets/tech/jasmine.svg', active: true },
+    { name: 'JaCoCo', category: 'quality', active: true },
+    { name: 'SonarQube', category: 'quality', logoUrl: 'assets/tech/sonarqube.svg', active: true },
+    { name: 'Checkmarx', category: 'quality', logoUrl: 'assets/tech/checkmarx.svg', active: true },
+    { name: 'AppScan', category: 'quality', logoUrl: 'assets/tech/hcl.svg', active: true },
+    { name: 'Black Duck', category: 'quality', active: true },
+    { name: 'OWASP Dependency-Check', category: 'quality', logoUrl: 'assets/tech/owasp.svg', active: true },
+    // ai
+    { name: 'ChatGPT', category: 'ai', active: true },
+    { name: 'Gemini', category: 'ai', logoUrl: 'assets/tech/gemini.svg', active: true },
+    { name: 'Claude', category: 'ai', logoUrl: 'assets/tech/claude.svg', active: true },
+    { name: 'Google Toolkit AI', category: 'ai', logoUrl: 'assets/tech/google.svg', active: true },
   ],
 };
 
@@ -153,3 +220,8 @@ export const VERIFIED_BADGES: CredlyBadge[] = PORTFOLIO_CONFIG.credlyBadges.filt
 
 /** Solo tecnologías marcadas como activas. */
 export const ACTIVE_TECHNOLOGIES: Technology[] = PORTFOLIO_CONFIG.technologies.filter(t => t.active);
+
+/** Tecnologías activas agrupadas por categoría (se omiten categorías vacías). */
+export const ACTIVE_TECH_GROUPS = TECH_CATEGORIES
+  .map(category => ({ category, items: ACTIVE_TECHNOLOGIES.filter(t => t.category === category) }))
+  .filter(g => g.items.length > 0);

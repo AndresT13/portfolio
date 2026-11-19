@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 import { DystopianHeroComponent } from './components/dystopian-hero/dystopian-hero.component';
 import { PROJECTS,Project,localizeProject } from './projects';
 import { I18nService } from './i18n/i18n.service';
-import { ACTIVE_TECHNOLOGIES, PORTFOLIO_CONFIG, VERIFIED_BADGES } from './portfolio.config';
+import { ACTIVE_TECH_GROUPS, PORTFOLIO_CONFIG, VERIFIED_BADGES } from './portfolio.config';
 @Component({selector:'app-project-cards',standalone:true,imports:[RouterLink],template:`
 <div class="projects-grid">
   @for(raw of items;track raw.slug){
@@ -42,9 +42,9 @@ export class ProjectCards{
 <section id="especialidades" class="wrap specialties reveal-section"><article><span>⌘</span><div><h3>{{i18n.t('spec.fullstack.title')}}</h3><p>{{i18n.t('spec.fullstack.text')}}</p></div></article><article><span>⬡</span><div><h3>{{i18n.t('spec.motion.title')}}</h3><p>{{i18n.t('spec.motion.text')}}</p></div></article><article><span>◭</span><div><h3>{{i18n.t('spec.devops.title')}}</h3><p>{{i18n.t('spec.devops.text')}}</p></div></article><article><span>✺</span><div><h3>{{i18n.t('spec.ai.title')}}</h3><p>{{i18n.t('spec.ai.text')}}</p></div></article></section>
 <section class="wrap section reveal-section"><div class="section-heading"><div><p class="eyebrow">{{i18n.t('home.work.eyebrow')}}</p><h2>{{i18n.t('home.work.title')}}<span>{{i18n.t('home.work.titleSpan')}}</span></h2></div><a routerLink="/proyectos" class="text-link">{{i18n.t('home.work.all')}}</a></div><app-project-cards [items]="projects"/></section>
 <section id="sobre-mi" class="wrap about section reveal-section"><div><p class="eyebrow">{{i18n.t('home.about.eyebrow')}}</p><h2>{{i18n.t('home.about.title')}}<span>{{i18n.t('home.about.titleSpan')}}</span></h2></div><div><p>{{i18n.t('home.about.text')}}</p><div class="chips"><span>Spring WebFlux</span><span>Kafka</span><span>Docker</span><span>{{i18n.t('chip.microservices')}}</span><span>GSAP</span><span>Spring AI</span></div></div></section>
-@if(technologies.length){
+@if(techGroups.length){
 <section id="stack" class="wrap section tech-stack reveal-section"><div class="section-heading"><div><p class="eyebrow">{{i18n.t('home.stack.eyebrow')}}</p><h2>{{i18n.t('home.stack.title')}}<span>{{i18n.t('home.stack.titleSpan')}}</span></h2></div></div>
-<ul class="tech-grid" role="list">@for(tech of technologies;track tech.name){<li class="tech-item"><img [src]="tech.logoUrl" [alt]="tech.name" width="56" height="56" loading="lazy" decoding="async"><span>{{tech.name}}</span></li>}</ul></section>
+<dl class="tech-groups">@for(g of techGroups;track g.category){<div class="tech-group"><dt>{{i18n.tDynamic('stack.cat.'+g.category)}}</dt><dd><ul class="tech-chips" role="list">@for(tech of g.items;track tech.name){<li class="tech-chip">@if(tech.logoUrl){<span class="tech-logo"><img [src]="tech.logoUrl" alt="" width="14" height="14" loading="lazy" decoding="async"></span>}@else{<span class="tech-dot" aria-hidden="true"></span>}<span>{{i18n.lang()==='es'&&tech.nameEs?tech.nameEs:tech.name}}</span></li>}</ul></dd></div>}</dl></section>
 }
 @if(badges.length){
 <section id="certificaciones" class="wrap section credly reveal-section"><div class="section-heading"><div><p class="eyebrow">{{i18n.t('home.badges.eyebrow')}}</p><h2>{{i18n.t('home.badges.title')}}<span>{{i18n.t('home.badges.titleSpan')}}</span></h2></div>@if(credlyProfileUrl){<a class="text-link" [href]="credlyProfileUrl" target="_blank" rel="noopener noreferrer">{{i18n.t('home.badges.profile')}}</a>}</div>
@@ -55,7 +55,7 @@ export class Home implements AfterViewInit,OnDestroy {
  private platform=inject(PLATFORM_ID);
  readonly i18n=inject(I18nService);
  private animationContext?:gsap.Context;
- readonly technologies=ACTIVE_TECHNOLOGIES;
+ readonly techGroups=ACTIVE_TECH_GROUPS;
  readonly badges=VERIFIED_BADGES;
  readonly credlyProfileUrl=PORTFOLIO_CONFIG.credlyProfileUrl;
  formatDate(ym:string){const [y,m]=ym.split('-').map(Number);return new Intl.DateTimeFormat(this.i18n.locale(),{month:'short',year:'numeric'}).format(new Date(y,m-1,1));}
