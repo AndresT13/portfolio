@@ -127,12 +127,6 @@ export const PORTFOLIO_CONFIG: PortfolioConfig = {
     { name: 'Java', logoUrl: 'assets/tech/java.svg', active: true },
     { name: 'Spring Boot', logoUrl: 'assets/tech/spring-boot.svg', active: true },
     { name: 'Angular', logoUrl: 'assets/tech/angular.svg', active: true },
-    // Disponibles: cambiar active a true para mostrarlas.
-    { name: 'TypeScript', logoUrl: 'assets/tech/typescript.svg', active: false },
-    { name: 'Next.js', logoUrl: 'assets/tech/nextjs.svg', active: false },
-    { name: 'Docker', logoUrl: 'assets/tech/docker.svg', active: false },
-    { name: 'AWS', logoUrl: 'assets/tech/aws.svg', active: false },
-    { name: 'Python', logoUrl: 'assets/tech/python.svg', active: false },
   ],
 };
 
