@@ -4,7 +4,7 @@ import { RouterLink,RouterLinkActive,RouterOutlet } from '@angular/router';
 import { I18nService } from './i18n/i18n.service';
 @Component({selector:'app-root',standalone:true,imports:[RouterOutlet,RouterLink,RouterLinkActive],template:`
 <header class="site-header"><a routerLink="/" class="logo"><span class="logo-mark">◩</span><span>JATG<small>JAIME ANDRES TELLEZ G.</small></span></a>
-<nav [attr.aria-label]="i18n.t('nav.aria')"><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">{{i18n.t('nav.home')}}</a><a routerLink="/proyectos" routerLinkActive="active">{{i18n.t('nav.projects')}}</a><a href="/#especialidades">{{i18n.t('nav.specialties')}}</a><a href="/#sobre-mi">{{i18n.t('nav.about')}}</a></nav>
+<nav [attr.aria-label]="i18n.t('nav.aria')"><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">{{i18n.t('nav.home')}}</a><a routerLink="/proyectos" routerLinkActive="active">{{i18n.t('nav.projects')}}</a><a routerLink="/" fragment="especialidades">{{i18n.t('nav.specialties')}}</a><a routerLink="/" fragment="sobre-mi">{{i18n.t('nav.about')}}</a></nav>
 <div class="header-controls">
 <button type="button" class="theme-switch lang-switch" (click)="i18n.toggle()" [attr.aria-label]="i18n.t('lang.aria')" [attr.lang]="i18n.nextLang()">🌐 {{i18n.t('lang.switch')}}</button>
 <button type="button" class="theme-switch" (click)="toggleTheme()" [attr.aria-label]="theme==='light'?i18n.t('theme.ariaToDark'):i18n.t('theme.ariaToLight')" [attr.aria-pressed]="theme==='dark'">{{theme==='light'?i18n.t('theme.toDark'):i18n.t('theme.toLight')}}</button>

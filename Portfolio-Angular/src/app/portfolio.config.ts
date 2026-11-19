@@ -135,6 +135,7 @@ export const PORTFOLIO_CONFIG: PortfolioConfig = {
     { name: 'Spring Security', category: 'backend', logoUrl: 'assets/tech/spring-security.svg', active: true },
     { name: 'Spring Data JPA', category: 'backend', logoUrl: 'assets/tech/spring-boot.svg', active: true },
     { name: 'Spring Batch', category: 'backend', logoUrl: 'assets/tech/spring-boot.svg', active: true },
+    { name: 'Spring AI', category: 'backend', logoUrl: 'assets/tech/spring-boot.svg', active: true },
     { name: 'Hibernate', category: 'backend', logoUrl: 'assets/tech/hibernate.svg', active: true },
     { name: 'JPA', category: 'backend', abbr: 'JPA', active: true },
     { name: 'Maven', category: 'backend', logoUrl: 'assets/tech/maven.svg', active: true },
@@ -183,8 +184,7 @@ export const PORTFOLIO_CONFIG: PortfolioConfig = {
     // quality
     { name: 'JUnit', category: 'quality', logoUrl: 'assets/tech/junit.svg', active: true },
     { name: 'Mockito', category: 'quality', abbr: 'MO', active: true },
-    { name: 'Karma', category: 'quality', logoUrl: 'assets/tech/karma.svg', active: true },
-    { name: 'Jasmine', category: 'quality', logoUrl: 'assets/tech/jasmine.svg', active: true },
+    { name: 'Vitest', category: 'quality', logoUrl: 'assets/tech/vitest.svg', active: true },
     { name: 'JaCoCo', category: 'quality', abbr: 'JCC', active: true },
     { name: 'SonarQube', category: 'quality', logoUrl: 'assets/tech/sonarqube.svg', active: true },
     { name: 'Checkmarx', category: 'quality', logoUrl: 'assets/tech/checkmarx.svg', active: true },
