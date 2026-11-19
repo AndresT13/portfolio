@@ -1,4 +1,4 @@
-<section class="hero-scene" #scene aria-label="Paisaje distópico animado con ciclo rápido de día y noche">
+<section class="hero-scene" #scene [attr.aria-label]="i18n.t('hero.aria')">
   <div class="landscape day-layer" aria-hidden="true"></div>
   <div class="landscape night-layer" aria-hidden="true"></div>
 
@@ -15,17 +15,14 @@
 
   <div class="hero-shade" aria-hidden="true"></div>
   <div class="hero-copy">
-    <span class="eyebrow">PRISM / INGENIERÍA DE SOFTWARE</span>
-    <h1>Construyo tecnología para un mundo en <em>constante transformación.</em></h1>
-    <p>
-      Arquitectura de software, desarrollo Full Stack y experiencias digitales.
-      Descubre soluciones con Java, Spring Boot, Angular y tecnologías cloud.
-    </p>
+    <span class="eyebrow">{{ i18n.t('hero.eyebrow') }}</span>
+    <h1>{{ i18n.t('hero.title') }}<em>{{ i18n.t('hero.titleEm') }}</em></h1>
+    <p>{{ i18n.t('hero.lead') }}</p>
     <div class="hero-actions">
-      <a href="/proyectos" class="btn-primary">Explorar proyectos <span aria-hidden="true">↗</span></a>
-      <a href="https://www.linkedin.com/in/jaimeandrestellezg/" class="btn-outline" target="_blank" rel="noopener noreferrer">Hablemos <span aria-hidden="true">↗</span></a>
+      <a href="/proyectos" class="btn-primary">{{ i18n.t('hero.ctaProjects') }} <span aria-hidden="true">↗</span></a>
+      <a href="https://www.linkedin.com/in/jaimeandrestellezg/" class="btn-outline" target="_blank" rel="noopener noreferrer">{{ i18n.t('hero.ctaTalk') }} <span aria-hidden="true">↗</span></a>
     </div>
   </div>
 
-  <div class="scene-caption">DÍA Y NOCHE / ANIMACIÓN CONTINUA</div>
+  <div class="scene-caption">{{ i18n.t('hero.caption') }}</div>
 </section>

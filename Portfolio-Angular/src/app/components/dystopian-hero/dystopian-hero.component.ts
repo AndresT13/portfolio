@@ -1,5 +1,6 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, NgZone, OnDestroy, ViewChild, inject } from '@angular/core';
 import { gsap } from 'gsap';
+import { I18nService } from '../../i18n/i18n.service';
 
 /** Paisaje distópico Angular + GSAP: bucle automático, sin botones y sin Three.js. */
 @Component({
@@ -12,6 +13,7 @@ import { gsap } from 'gsap';
 export class DystopianHeroComponent implements AfterViewInit, OnDestroy {
   @ViewChild('scene', { static: true }) private scene!: ElementRef<HTMLElement>;
   private readonly zone = inject(NgZone);
+  readonly i18n = inject(I18nService);
   private context?: gsap.Context;
   readonly birds = Array.from({ length: 10 }, (_, index) => index);
 
