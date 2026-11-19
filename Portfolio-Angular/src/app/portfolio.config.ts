@@ -184,8 +184,7 @@ export const PORTFOLIO_CONFIG: PortfolioConfig = {
     // quality
     { name: 'JUnit', category: 'quality', logoUrl: 'assets/tech/junit.svg', active: true },
     { name: 'Mockito', category: 'quality', abbr: 'MO', active: true },
-    { name: 'Karma', category: 'quality', logoUrl: 'assets/tech/karma.svg', active: true },
-    { name: 'Jasmine', category: 'quality', logoUrl: 'assets/tech/jasmine.svg', active: true },
+    { name: 'Vitest', category: 'quality', logoUrl: 'assets/tech/vitest.svg', active: true },
     { name: 'JaCoCo', category: 'quality', abbr: 'JCC', active: true },
     { name: 'SonarQube', category: 'quality', logoUrl: 'assets/tech/sonarqube.svg', active: true },
     { name: 'Checkmarx', category: 'quality', logoUrl: 'assets/tech/checkmarx.svg', active: true },

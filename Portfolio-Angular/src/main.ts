@@ -5,6 +5,6 @@ import { routes } from './app/routes';
 import { I18nTitleStrategy } from './app/i18n/i18n-title.strategy';
 
 bootstrapApplication(App, { providers: [
-  provideRouter(routes, withInMemoryScrolling({scrollPositionRestoration:'enabled'})),
+  provideRouter(routes, withInMemoryScrolling({scrollPositionRestoration:'enabled',anchorScrolling:'enabled'})),
   { provide: TitleStrategy, useClass: I18nTitleStrategy },
 ] }).catch(err => console.error(err));
