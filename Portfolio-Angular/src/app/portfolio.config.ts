@@ -135,6 +135,7 @@ export const PORTFOLIO_CONFIG: PortfolioConfig = {
     { name: 'Spring Security', category: 'backend', logoUrl: 'assets/tech/spring-security.svg', active: true },
     { name: 'Spring Data JPA', category: 'backend', logoUrl: 'assets/tech/spring-boot.svg', active: true },
     { name: 'Spring Batch', category: 'backend', logoUrl: 'assets/tech/spring-boot.svg', active: true },
+    { name: 'Spring AI', category: 'backend', logoUrl: 'assets/tech/spring-boot.svg', active: true },
     { name: 'Hibernate', category: 'backend', logoUrl: 'assets/tech/hibernate.svg', active: true },
     { name: 'JPA', category: 'backend', abbr: 'JPA', active: true },
     { name: 'Maven', category: 'backend', logoUrl: 'assets/tech/maven.svg', active: true },
