@@ -125,3 +125,27 @@ body::before{display:none!important}
 .contact{background:var(--surface-alt)}
 /* Borders and spacing distinguish surfaces; never glow or gradient. */
 .project-card,.specialties article,.glass,.contact{border:1px solid var(--line)}
+
+/* ===== i18n: selector de idioma ===== */
+.header-controls{display:flex;align-items:center;gap:10px}
+.lang-switch{min-width:72px;letter-spacing:.06em}
+@media(max-width:650px){.header-controls{gap:6px}}
+
+/* ===== Stack tecnológico (solo tecnologías activas) ===== */
+.tech-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+.tech-item{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:26px 16px;border:1px solid var(--line);border-radius:15px;background:var(--surface);transition:transform .22s,border-color .22s}
+.tech-item:hover{transform:translateY(-4px);border-color:var(--orange)}
+.tech-item img{width:56px;height:56px;object-fit:contain}
+.tech-item span{font:600 13px 'IBM Plex Mono',monospace;letter-spacing:.06em;color:var(--ink)}
+
+/* ===== Credly badges ===== */
+.badge-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:18px}
+.badge-card{display:flex;gap:18px;align-items:center;padding:22px 18px;border:1px solid var(--line);border-radius:15px;background:var(--surface);transition:transform .22s,border-color .22s}
+.badge-card:hover{transform:translateY(-4px);border-color:var(--orange)}
+.badge-card img{flex:0 0 110px;width:110px;height:110px;object-fit:contain}
+.badge-info h3{margin:0 0 8px;font:700 16px 'Manrope',sans-serif;color:var(--ink)}
+.badge-info .tiny{margin:0 0 6px;color:var(--orange);letter-spacing:.1em}
+.badge-date{margin:0 0 14px;font-size:12px;color:var(--muted)}
+.badge-info .card-action{display:inline-block;font:600 12px 'Manrope',sans-serif;padding:9px 14px;border:1px solid var(--line);border-radius:10px;color:var(--ink);background:var(--surface)}
+.badge-info .card-action:hover{border-color:var(--orange);background:var(--surface-alt)}
+@media(max-width:650px){.badge-card img{flex-basis:84px;width:84px;height:84px}}

@@ -44,3 +44,10 @@ El hero distópico inicia automáticamente al cargar, se repite indefinidamente 
 - Sin degradados CSS, desenfoques, sombras difusas ni efectos glassmorphism.
 - Paisaje automático con aves y día/noche mediante una capa de color sólido (sin gradientes).
 - Angular y GSAP; sin Three.js.
+
+## Idiomas, favicon, stack y Credly
+- **i18n en tiempo de ejecución** (Signals): inglés por defecto, español conmutable con el botón 🌐 del header; la elección se guarda en `localStorage` (`prism-lang`). Textos en `src/app/i18n/translations.ts` (las claves ES se validan en compilación contra EN). Traducciones de proyectos en `PROJECTS_EN` (`src/app/projects.ts`). Los títulos de pestaña se traducen con `I18nTitleStrategy`.
+- **Configuración de dominio**: `src/app/portfolio.config.ts` (idiomas, favicon, badges de Credly y tecnologías).
+- **Favicon**: `public/assets/images/favicon.png` (+ `apple-touch-icon.png`).
+- **Stack**: solo se renderizan las tecnologías con `active: true`. Logos SVG en `public/assets/tech/` (devicon, MIT).
+- **Credly**: solo se muestran badges con datos reales, imagen válida y `verificationUrl` https de `credly.com`; con placeholders la sección no aparece.
